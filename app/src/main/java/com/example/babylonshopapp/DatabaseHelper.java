@@ -75,6 +75,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
     }
 
+    public Cursor getOrders(String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM orders WHERE email = ?", new String[]{email});
+        return result;
+    }
+
     public Cursor getAllUsers() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result = db.rawQuery("SELECT * FROM users", null);

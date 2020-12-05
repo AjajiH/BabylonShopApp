@@ -2,20 +2,27 @@ package com.example.babylonshopapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-
+    public String email;
+    DatabaseHelper db = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        Intent i = getIntent();
+        email = i.getStringExtra("email");
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
@@ -41,11 +48,51 @@ public class HomeActivity extends AppCompatActivity {
                             selectedFragment = new CartFragment();
                             break;
                         case R.id.nav_history:
-                            selectedFragment = new HistoryFragment();
+                            selectedFragment = new HistoryFragment(email);
+                            createHistoryView();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                     return true;
                 }
             };
+
+    public void createHistoryView(){
+        db = new DatabaseHelper(this);
+        Cursor res = db.getOrders(email);
+        int d = 2;
+        int id = 0;
+        if(res.getCount() > 0){
+            res.moveToNext();
+            TextView orderNum = findViewById(R.id.order1);
+            TextView date = findViewById(R.id.date1);
+            date.setText(res.getString(d));
+            orderNum.setText("Order #"+res.getInt(id));
+        } else {
+            CardView cont = findViewById(R.id.cont1);
+            cont.setVisibility(View.GONE);
+        }
+        if(res.getCount() > 1){
+            res.moveToNext();
+            TextView orderNum = findViewById(R.id.order2);
+            TextView date = findViewById(R.id.date2);
+            date.setText(res.getString(d));
+            orderNum.setText("Order #"+res.getInt(id));
+        } else {
+            CardView cont = findViewById(R.id.cont2);
+            cont.setVisibility(View.GONE);
+        }
+        if(res.getCount() > 2){
+            res.moveToNext();
+            TextView orderNum = findViewById(R.id.order3);
+            TextView date = findViewById(R.id.date3);
+            date.setText(res.getString(d));
+            orderNum.setText("Order #"+res.getInt(id));
+        } else {
+            CardView cont = findViewById(R.id.cont3);
+            cont.setVisibility(View.GONE);
+        }
+
+
+    }
 }
