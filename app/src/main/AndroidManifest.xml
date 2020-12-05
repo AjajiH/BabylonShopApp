@@ -27,6 +27,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity"/>
         <activity android:name=".HomeActivity">
+<!--            change the Home into main when you finish-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
