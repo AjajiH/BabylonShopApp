@@ -35,14 +35,14 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/title_name"
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/user_img"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
-            android:text="User Name"
+            android:hint="Username"
             android:textColor="@color/white"
             android:textSize="32sp" />
 
@@ -59,6 +59,11 @@
             android:onClick="editinfo"
             android:scaleType="centerInside"
             android:src="@drawable/ic_baseline_edit_24" />
+        <Button
+            android:id="@+id/editUserBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"/>
 
     </RelativeLayout>
 
@@ -96,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="My Name"
+                    android:hint="First Name"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -126,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="My Last Name"
+                    android:hint="Last Name"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -155,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="test@gmail.com"
+                    android:hint="test@gmail.com"
                     android:textColor="#303032"
                     android:textSize="18sp" />
 
@@ -185,7 +190,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="+966-555-555-5555"
+                    android:hint="+966-555-555-5555"
                     android:textColor="#303032"
                     android:textSize="18sp" />
 

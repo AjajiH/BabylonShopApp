@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (checkUserPass == true) {
                         Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_LONG).show();
                         Intent goToHomePageActivity = new Intent(getApplicationContext(), HomeActivity.class);
+                        goToHomePageActivity.putExtra("USERNAME", Email);
                         startActivity(goToHomePageActivity);
                     } else {
                         Toast.makeText(LoginActivity.this, "Invalid Credentials!", Toast.LENGTH_LONG).show();
