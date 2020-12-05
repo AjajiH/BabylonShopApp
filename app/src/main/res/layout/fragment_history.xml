@@ -9,7 +9,7 @@
     tools:context=".HistoryFragment">
 
     <RelativeLayout
-        android:id="@+id/cartHeader"
+        android:id="@+id/CheckoutHeader"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="#303032"
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cartHeader">
+        app:layout_constraintTop_toBottomOf="@+id/CheckoutHeader">
 
 
         <androidx.cardview.widget.CardView
