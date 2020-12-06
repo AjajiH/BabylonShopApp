@@ -17,7 +17,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText firstName, lastName, email, password, repassword, phoneNumber;
     Button registerBtn;
 
-    //ProgressDialog loadingBar;
+    //ProgressDialog loadingBar;a
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
