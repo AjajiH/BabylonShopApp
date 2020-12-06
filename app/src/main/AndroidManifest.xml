@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.babylonshopapp">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-
-    <uses-feature android:name="android.hardware.type.watch" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,32 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BabylonShopApp">
-        <activity android:name=".OutdoorProductsActivity"></activity>
+        <activity android:name=".CheckoutActivity"></activity>
+        <activity android:name=".OutdoorProductsActivity" />
         <activity
             android:name=".TableChairProductsActivity"
             android:label="@string/title_activity_table_chair_products">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".BathroomProductsActivity" />
         <activity
             android:name=".KitchenProductsActivity"
             android:label="@string/title_activity_kitchen_products">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".LivingRoomProductsActivity" />
         <activity android:name=".BedroomsProductsActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".HomeActivity">
+<!--            change the Home into main when you finish-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,5 +35,9 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest>

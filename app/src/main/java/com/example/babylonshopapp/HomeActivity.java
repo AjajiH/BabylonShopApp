@@ -1,5 +1,9 @@
 package com.example.babylonshopapp;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -7,16 +11,14 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     public String email;
     DatabaseHelper db = new DatabaseHelper(this);
+    Button checkoutbtn ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,12 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
+
+
     }
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity">
+
+
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Details "
+                android:textSize="40dp"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:textSize="25dp"
+                android:text="Total Price is 8400 SAR"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="Full Name "
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter your full name"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="City"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextTextcity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="i.e. Dammam" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="Postal Code"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextTextPostalcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="i.e. 35112" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="Card number"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextcardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="**** ***** ***** ******" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="Expiration Data"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="datetime"
+                android:hint="mm - yy" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="CVV"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextCvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="123" />
+
+        <Button
+            android:id="@+id/ch_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="50dp"
+            android:text="Submit"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

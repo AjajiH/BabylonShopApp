@@ -1,11 +1,11 @@
 package com.example.babylonshopapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         HomeLoginBtn = (Button)findViewById(R.id.HomeLoginBtn);
         HomeCreateAccountBtn = (Button)findViewById(R.id.HomeCreateAccountBtn);
+
 //        GetAllUsers();
 
         HomeLoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -37,5 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(registerIntent);
             }
         });
+
+
     }
+
 }
