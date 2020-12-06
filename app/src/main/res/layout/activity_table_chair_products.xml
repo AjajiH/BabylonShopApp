@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollable"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/b">
@@ -58,6 +59,7 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -76,6 +78,7 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -94,6 +97,7 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -112,6 +116,7 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -130,6 +135,7 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -148,6 +154,7 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -166,6 +173,7 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -184,47 +192,14 @@
                 app:cardElevation="8dp">
 
                 <ImageView
+                    android:id="@+id/table8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     android:src="@drawable/red_chair" />
             </androidx.cardview.widget.CardView>
             <!--        Column 1-->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/teatablea_3" />
-            </androidx.cardview.widget.CardView>
             <!--        Column 1-->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/teatable_2" />
-            </androidx.cardview.widget.CardView>
         </GridLayout>
     </LinearLayout>
 </ScrollView>
