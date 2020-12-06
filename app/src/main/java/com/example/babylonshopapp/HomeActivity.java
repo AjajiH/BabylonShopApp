@@ -4,7 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -20,6 +24,18 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
+        BroadcastReceiver broadcastReceiver = new MyReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.abc.WELCOME_INTENT");
+        registerReceiver(broadcastReceiver, filter);
+
+        Intent welcomeIntent = getIntent();
+        String InputData = welcomeIntent.getStringExtra("USERNAME");
+        Log.i("TAG", "Login");
+        Intent intent = new Intent();
+        intent.setAction("com.abc.WELCOME_INTENT");
+        sendBroadcast(new Intent(this, MyReceiver.class).setAction(InputData));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

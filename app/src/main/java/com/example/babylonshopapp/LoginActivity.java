@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     Boolean checkUserPass = databaseHelper.validateUserAndPassword(Email, Pass);
                     if (checkUserPass == true) {
-                        Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_LONG).show();
                         Intent goToHomePageActivity = new Intent(getApplicationContext(), HomeActivity.class);
                         goToHomePageActivity.putExtra("USERNAME", Email);
                         startActivity(goToHomePageActivity);
