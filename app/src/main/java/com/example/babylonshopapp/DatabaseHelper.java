@@ -12,13 +12,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "babylon.db";
 
-//    public static final String USER_TABLE = "user_table";
-//
-//    public static final String USER_COL_1 = "email";
-//    public static final String USER_COL_2 = "password";
-//    public static final String USER_COL_3 = "first_name";
-//    public static final String USER_COL_4 = "last_name";
-//    public static final String USER_COL_5 = "phone";
+    public static final String USER_TABLE = "users";
+
+//    public static final String EMAIL = "email";
+//    public static final String FIRST_NAME = "firstName";
+//    public static final String LAST_NAME = "lastName";
+//    public static final String PASS = "password";
+//    public static final String PHONE = "phone";
 //
 //
 //    public static final String PRODUCT_TABLE = "product_table";
@@ -79,6 +79,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM users WHERE email = ?", new String[]{email});
         return cursor;
+    }
+
+    public boolean updateUserProfile(String email, String firstName, String lastName, String pass, String phone) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email", email);
+        contentValues.put("first_name", firstName);
+        contentValues.put("last_name", lastName);
+        contentValues.put("phone", phone);
+        db.update("users", contentValues, "email = ?", new String[]{email});
+        return true;
+    }
+
+    public Cursor getUser(String userID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM " + USER_TABLE + " WHERE email = ?", new String[]{userID});
+        return result;
     }
 
     public Cursor getAllUsers() {

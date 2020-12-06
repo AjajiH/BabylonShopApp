@@ -17,6 +17,7 @@ public class MyAccountFragment extends Fragment {
 
     DatabaseHelper databaseHelper;
     Button editProfileBtn;
+
     public MyAccountFragment() {
         // Required empty public constructor
     }
@@ -30,7 +31,7 @@ public class MyAccountFragment extends Fragment {
         return rootView;
     }
 
-    public void onActivityCreated(Bundle savedInstanceState){
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         TextView username = getActivity().findViewById(R.id.username);
@@ -43,37 +44,36 @@ public class MyAccountFragment extends Fragment {
         String Username = intent.getStringExtra("USERNAME");
 
         Cursor result = databaseHelper.retrieveAllData(Username);
-//        Cursor result = databaseHelper.getUser(Username);
         StringBuilder stringBuilder0 = new StringBuilder();
         StringBuilder stringBuilder1 = new StringBuilder();
         StringBuilder stringBuilder2 = new StringBuilder();
         StringBuilder stringBuilder3 = new StringBuilder();
         StringBuilder stringBuilder4 = new StringBuilder();
 
-        while(result.moveToNext()){
+        while (result.moveToNext()) {
             stringBuilder0.append(result.getString(0));
-            stringBuilder1.append(result.getString(0));
+            stringBuilder1.append(result.getString(1));
             stringBuilder2.append(result.getString(2));
             stringBuilder3.append(result.getString(3));
             stringBuilder4.append(result.getString(4));
         }
-        username.setText(stringBuilder1);
-        email.setText(stringBuilder1);
+        username.setText(stringBuilder0);
+        email.setText(stringBuilder0);
         firstName.setText(stringBuilder2);
         lastName.setText(stringBuilder3);
         phone.setText(stringBuilder4);
 
+        String getEmail = username.getText().toString();
 
-//        editProfileBtn = getActivity().findViewById(R.id.editUserBtn);
-//        editProfileBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity().getApplicationContext(), EditProfileActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        editProfileBtn = getActivity().findViewById(R.id.editUserBtn);
+        editProfileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), EditProfileActivity.class);
+                intent.putExtra("EMAIL", getEmail);
+                startActivity(intent);
+            }
+        });
     }
-
-
-
 }
+
