@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "babylon.db";
@@ -231,6 +233,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor result = db.rawQuery("SELECT * FROM product", null);
         return result;
     }
+
+    public void addOrder(String email){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("INSERT INTO orders (o_id, ordered_items,date_placed,Address,Status,cust_email,track,price) VALUES ("+ ThreadLocalRandom.current().nextInt()+", 'Brooklyn Floor Lamp', '14/11/2020', 'Dammam', 'Pending', '"+email+"', '32345422332232','352.25')");
+
+    }
+
 
 
 

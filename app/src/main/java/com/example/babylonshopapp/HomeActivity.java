@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
                             selectedFragment = new MyAccountFragment();
                             break;
                         case R.id.nav_cart:
-                            selectedFragment = new CartFragment();
+                            selectedFragment = new CartFragment(email);
                             break;
                         case R.id.nav_history:
                             selectedFragment = new HistoryFragment(email);

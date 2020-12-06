@@ -14,6 +14,16 @@ import androidx.fragment.app.Fragment;
 public class CartFragment extends Fragment {
 
     TextView itemprice1 , itemprice2, totalprice;
+    String email;
+
+    public CartFragment(String email){
+        this.email = email;
+
+        System.out.println("Email:" + this.email);
+    }
+    public CartFragment(){
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,6 +45,7 @@ public class CartFragment extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(getActivity().getApplicationContext(),CheckoutActivity.class);
                 i.putExtra("Total_Price", "" + TotalPrice);
+                i.putExtra("email",email);
                 startActivity(i);
             }
         });

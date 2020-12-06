@@ -19,7 +19,7 @@
         </receiver>
 
         <activity android:name=".EditProfileActivity"></activity>
-        <activity android:name=".OutdoorProductsActivity" />
+<!--        <activity android:name=".OutdoorProductsActivity" />-->
         <activity
             android:name=".TableChairProductsActivity"
             android:label="@string/title_activity_table_chair_products">
