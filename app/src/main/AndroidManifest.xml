@@ -11,6 +11,15 @@
         android:theme="@style/Theme.BabylonShopApp">
         <activity android:name=".CheckoutActivity"></activity>
         <activity android:name=".OutdoorProductsActivity" />
+
+        <receiver android:name=".MyReceiver">
+            <intent-filter>
+                <action android:name="com.abc.WELCOME_INTENT"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".OutdoorProductsActivity" />
         <activity
             android:name=".TableChairProductsActivity"
             android:label="@string/title_activity_table_chair_products">
