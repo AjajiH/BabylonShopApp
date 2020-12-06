@@ -33,11 +33,65 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE users (email TEXT PRIMARY KEY, password TEXT, first_name TEXT, last_name TEXT, phone TEXT )");// create users table
-        db.execSQL("CREATE TABLE cart (email TEXT,p_id INTEGER,quantity INTEGER)"); //create cart table
-        db.execSQL("CREATE TABLE orders (o_id INTEGER, ordered_items TEXT, date_placed INTEGER,Address TEXT, Status TEXT,cust_email TEXT,track TEXT)"); //create orders table
-        db.execSQL("CREATE TABLE  payment (Owner TEXT,type TEXT,num TEXT,name TEXT,exp TEXT,cvv TEXT,billing TEXT)");
-        db.execSQL("CREATE TABLE product (p_id INTEGER, name TEXT,price REAL, quantity INTEGER, category TEXT, image TEXT, added_by TEXT, description TEXT)");// create product table
+        db.execSQL("CREATE TABLE users (" +
+                "email TEXT PRIMARY KEY," +
+                " password TEXT," +
+                " first_name TEXT," +
+                " last_name TEXT," +
+                " phone TEXT )");// create users table
+
+        db.execSQL("CREATE TABLE cart (" +
+                "email TEXT," +
+                "p_id INTEGER," +
+                "quantity INTEGER)"); //create cart table
+
+        db.execSQL("CREATE TABLE orders (" +
+                "o_id INTEGER," +
+                " ordered_items TEXT," +
+                " date_placed INTEGER," +
+                "Address TEXT," +
+                " Status TEXT," +
+                "cust_email TEXT," +
+                "track TEXT)"); //create orders table
+
+        db.execSQL("CREATE TABLE  payment (" +
+                "Owner TEXT," +
+                "type TEXT," +
+                "num TEXT," +
+                "name TEXT," +
+                "exp TEXT," +
+                "cvv TEXT," +
+                "billing TEXT)");
+        //db.execSQL("CREATE TABLE product (p_id INTEGER, name TEXT,price REAL, quantity INTEGER, category TEXT, image TEXT, added_by TEXT, description TEXT)");// create product table
+        db.execSQL("CREATE TABLE product("
+                + "id INTEGER PRIMARY KEY,"
+                + "name TEXT,"
+                +"category TEXT,"
+                + "price INTEGER,"
+                + "image TEXT) ");
+
+
+        //the approach I used here for the image is just taking it from the drawable folder converting images
+        //require depth knowledge which isnt part of our course
+        addProduct( 1,"White Bed ","bedroom", 2000,"bed_2.jpg");
+        addProduct( 2,"White Bed", "bedroom",3000, "bedroom_white_1.jpg");
+        addProduct( 3 ,"Child bed",  "bedroom",1000,"bedroom_child.PNG");
+        addProduct(4,"Hamper","bedroom", 200,"hamper_1.jpg");
+
+        addProduct( 5,"Wooden Book shelf ","living room", 1200,"bookshelfa_3.jpg");
+        addProduct( 6,"Wooden Book shelf", "living room",3000, "bookshelf_4.jpg");
+        addProduct( 7 ,"Grey Sofa",  "living room",3500,"grey_sofa.jpg");
+        addProduct(8,"Black Sofa","living room", 4000,"free_sofa_2.jpg");
+
+        addProduct( 9,"Wooden sink ","bath room", 1200,"bathroom.jpg");
+       
+
+
+
+
+
+
+
 
 
     }
@@ -190,6 +244,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result = db.rawQuery("SELECT * FROM product where category="+category, null);
         return result;
+    }
+
+    public Boolean addProduct(int id,String name,String category, int price,String image) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id", id);
+        contentValues.put("name", name);
+        contentValues.put("category", category);
+        contentValues.put("price", price);
+        contentValues.put("image", image);
+
+        long result = db.insert("product", null, contentValues);
+        if (result == -1)
+            return false;
+        else
+            return true;
     }
 
 
