@@ -35,8 +35,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE users (email TEXT PRIMARY KEY, password TEXT, first_name TEXT, last_name TEXT, phone TEXT )");// create users table
         db.execSQL("CREATE TABLE cart (email TEXT,p_id INTEGER,quantity INTEGER)"); //create cart table
-        db.execSQL("CREATE TABLE orders (o_id INTEGER, ordered_items TEXT, date_placed INTEGER,Address TEXT, Status TEXT,cust_email TEXT,track TEXT)"); //create orders table
-        db.execSQL("CREATE TABLE  payment (Owner TEXT,type TEXT,num TEXT,name TEXT,exp TEXT,cvv TEXT,billing TEXT)");
+        db.execSQL("CREATE TABLE orders (o_id INTEGER, ordered_items TEXT, date_placed TEXT,Address TEXT, Status TEXT,cust_email TEXT,track TEXT, price TEXT)"); //create orders table
+        db.execSQL("CREATE TABLE payment (Owner TEXT,type TEXT,num TEXT,name TEXT,exp TEXT,cvv TEXT,billing TEXT)");
         db.execSQL("CREATE TABLE product (p_id INTEGER, name TEXT,price REAL, quantity INTEGER, category TEXT, image TEXT, added_by TEXT, description TEXT)");// create product table
 
 
